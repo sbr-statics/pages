@@ -161,7 +161,7 @@ s3.doCmnStrPlugin = function() {
 	s.prop74=s.eVar74="D=vid";
 
 	s.prop75=location.search;
-	if (s.prop75) s.prop75 = s.substring(1,51);
+	if (s.prop75) s.prop75 = s.prop75.substring(1,255); 
 	s.eVar75 = "D=c75";
 
 	s.eVar31 = "D=pageName";
