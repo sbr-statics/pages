@@ -1,7 +1,7 @@
 /* SiteCatalyst code version: H.27.2.
 Copyright 1996-2014 Adobe, Inc. All Rights Reserved
-More info available at http://www.omniture.com 
-S3 Version 0.1.1 */
+More info available at http://www.omniture.com
+S3 Version 0.1.2 */
 
 /* Standard package ver1.0 2014/10/8 */
 
@@ -162,7 +162,7 @@ s3.doCmnStrPlugin = function() {
 	s.prop74=s.eVar74="D=vid";
 
 	s.prop75=location.search;
-	if (s.prop75) s.prop75 = s.prop75.substring(1,255); 
+	if (s.prop75) s.prop75 = s.prop75.substring(1,255);
 	s.eVar75 = "D=c75";
 
 	s.eVar31 = "D=pageName";
@@ -414,6 +414,19 @@ s3.manageVisitorID = function(cn){
 	}catch(e){
 		if( window.console ){
 			console.log(e);
+		}
+	}
+
+	if (document.domain == "www.softbank.jp"
+		&& location.pathname.match(/^\/robot\//)) {
+		document.cookie = cn + "ols" + "=" + s_visitorID +";domain=.softbank.jp;path=/";
+	} else if (document.domain == "online-shop.mb.softbank.jp") {
+		var ols_vid = s.c_r(cn + "ols");
+		if (ols_vid) {
+			s_visitorID = ols_vid;
+		    var exp_date=new Date;
+			exp_date.setTime(exp_date.getTime()+1825*86400000);
+			s.c_w(cn,s_visitorID,exp_date);
 		}
 	}
 
