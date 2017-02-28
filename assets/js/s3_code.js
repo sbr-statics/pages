@@ -1,6 +1,7 @@
 /* SiteCatalyst code version: H.27.2.
 Copyright 1996-2014 Adobe, Inc. All Rights Reserved
-More info available at http://www.omniture.com */
+More info available at http://www.omniture.com 
+S3 Version 0.1.1 */
 
 /* Standard package ver1.0 2014/10/8 */
 
